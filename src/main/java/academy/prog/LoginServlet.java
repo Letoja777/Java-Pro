@@ -15,12 +15,8 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String login = request.getParameter("login");
         String password = request.getParameter("password");
-
         char [] arr_login = login.toCharArray();
-
         String age = request.getParameter("age");
-        char [] arr_age = age.toCharArray();
-
         int intAge = Integer.parseInt(age);
 
         if (arr_login.length > 0 && check(password) && intAge > 18) {
