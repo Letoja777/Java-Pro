@@ -5,7 +5,6 @@
   </head>
   <body>
     <% String login = (String)session.getAttribute("user_login"); %>
-    <% int age = (int) session.getAttribute("user_age"); %>
 
     <% if (login == null || "".equals(login)) { %>
         <form action="/login" method="POST">
@@ -15,12 +14,8 @@
             <input type="submit" />
         </form>
     <% } else { %>
-        <% if (age < 18) { %>
-            <h1>You age less than 18! </h1>
-        <% } %>
         <h1>You are logged in as: <%= login %></h1>
         <br>Click this link to <a href="/login?a=exit">logout</a>
     <% } %>
-
   </body>
 </html>
